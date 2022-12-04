@@ -1,0 +1,82 @@
+/* .card {
+  height: 100%;
+  max-height: fit-content;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.cards {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cards .card {
+  width: 75%;
+  position: relative;
+  height: 350px;    
+  transition: all 1s;
+  margin-bottom: 20px;
+}
+
+.cards .card:hover {
+  box-shadow: 10px 10px 15px rgb(0 0 0 / 40%);
+  transition: all 1s;
+}
+
+.cards .card .cardContent{
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 10px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 10px;
+}
+
+.card .shopIcon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translate(0px, 0px); /* transform and transition property : in order to show and hide the plus icon*/
+  transition: all 1s;
+}
+
+.card .shopIcon:active {
+  color: red;
+  transition: all 0s !important;
+}
+
+.card:hover .shopIcon {
+  display: block;
+  transform: translate(-10px, 10px);
+  transition: all 1s;
+  opacity: 1;
+}
+
+.cards img {
+  object-fit:cover;
+  height: 400px;
+}
+
+.card .cardContent {
+  padding: 5px;
+
+}
+
+.cards .card .cardContent a  {
+  text-decoration: none;
+  color: rgb(219, 40, 40);
+  padding-top: 10px;
+  font-weight: bold;
+}
