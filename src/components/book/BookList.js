@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function BookList() {
-  const URL = "https://example-data.draftbit.com/books?_limit=20";
+  const URL = "https://example-data.draftbit.com/books?_limit=16";
   const [books, setBooks] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsloading] = useState(true);

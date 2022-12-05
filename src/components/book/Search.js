@@ -8,8 +8,7 @@ import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import FavIcon from "./FavIcon";
-import './search.css';
+import "./search.css";
 
 function Search() {
   const [search, setSearch] = useState("");
@@ -18,10 +17,11 @@ function Search() {
   const [error, setError] = useState("");
 
   const searchBook = () => {
+    console.log("search", search);
     axios
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
-          search +
+          search+
           "&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU" +
           "&maxResults=20"
       )
@@ -60,7 +60,7 @@ function Search() {
           >
             <InputBase
               sx={{ ml: 1, flex: 1 }}
-              placeholder="Search Google Maps"
+              placeholder="Search a Book"
               inputProps={{ "aria-label": "Search a Book" }}
               value={search}
               onChange={(e) => {
@@ -85,29 +85,33 @@ function Search() {
       <div>
         <Container>
           <Row>
-            {bookData.map((book, index) => {
-              return (
-                <Col
-                  xs={6}
-                  md={4}
-                  sm={6}
-                  lg={3}
-                  style={{ marginBottom: "3rem" }}
-                  key={index}
-                >
-                  <Container>
-                    <div
-                      className="card"
-                      style={{ width: "100%", height: 400 }}
-                    >
-                      <div className="card-body">
-                        <h6>{book.volumeInfo.title.toUpperCase()}</h6>
+            {bookData.length > 0 ? (
+              bookData.map((book, index) => {
+                return (
+                  <Col
+                    xs={6}
+                    md={4}
+                    sm={6}
+                    lg={3}
+                    style={{ marginBottom: "3rem" }}
+                    key={index}
+                  >
+                    <Container>
+                      <div
+                        className="card"
+                        style={{ width: "100%", height: 400 }}
+                      >
+                        <div className="card-body">
+                          <h6>{book.volumeInfo.title.toUpperCase()}</h6>
+                        </div>
                       </div>
-                    </div>
-                  </Container>
-                </Col>
-              );
-            })}
+                    </Container>
+                  </Col>
+                );
+              })
+            ) : (
+              <div className="default"></div>
+            )}
           </Row>
         </Container>
       </div>

@@ -4,7 +4,7 @@ import './footer.css';
 function Footer() {
   return (
     <div className="footer">
-      <p>This is some content in sticky footer</p>
+      <p>Library 2022</p>
     </div>
   );
 }

@@ -17,11 +17,10 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<Search />} />
             <Route path="/bookList" element={<BookList />} />
             <Route path="/favorite" element={<FavoriteBooks />} />
             <Route path="/book/:id" element={<BookDetail />} />
-            <Route path="/search" element={<Search />} />
           </Routes>
           <Footer />
         </Router>

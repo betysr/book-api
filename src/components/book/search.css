@@ -1,5 +1,5 @@
 .mainDiv{
-    height: 100vh;
+    height: 100%;
 }
 
 .searchBar{
@@ -13,4 +13,13 @@
 
 .css-1vm0r4s-MuiPaper-root {
     background-color: #aaa !important;
+}
+
+.default{
+    background: url('../../assets/libraryImage.jpg');
+    width: 100%;
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
