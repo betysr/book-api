@@ -1,0 +1,16 @@
+.mainDiv{
+    height: 100vh;
+}
+
+.searchBar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    
+}
+
+.css-1vm0r4s-MuiPaper-root {
+    background-color: #aaa !important;
+}

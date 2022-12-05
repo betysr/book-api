@@ -23,6 +23,9 @@ function NavBar() {
             <Link to={`/favorite`}>
               <Button variant="contained">FAVORITE BOOKS</Button>
             </Link>
+            <Link to={`/search`}>
+              <Button variant="contained">SEARCH</Button>
+            </Link>
           </Nav>
         </Container>
       </Navbar>
