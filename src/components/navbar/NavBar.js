@@ -1,23 +1,32 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import './navbar.css';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "./navbar.css";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function NavBar() {
   return (
     <>
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="/">BETUL'S LIBRARY</Navbar.Brand>
-          <Nav >
-            <Nav.Link href="/">HOME</Nav.Link>
-            <Nav.Link href="/bookList">BOOKS</Nav.Link>
-            <Nav.Link href="/favorite">MY FAVORITE BOOKS</Nav.Link>
+          <Link to={`/`}>
+            <Button variant="contained">BETUL'S LIBRARY</Button>
+          </Link>
+          <Nav>
+            <Link to={`/`}>
+              <Button variant="contained">HOME</Button>
+            </Link>
+            <Link to={`/bookList`}>
+              <Button variant="contained">BOOKS</Button>
+            </Link>
+            <Link to={`/favorite`}>
+              <Button variant="contained">FAVORITE BOOKS</Button>
+            </Link>
           </Nav>
         </Container>
       </Navbar>
     </>
-    
   );
 }
 

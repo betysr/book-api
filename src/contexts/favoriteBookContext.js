@@ -30,7 +30,7 @@ export const FavoriteBookProvider = (props) => {
 
   const handleRemoveFavorite = (book) => {
     setFavoriteBooks(
-      favoriteBooks.filter((item) => item.id !== book.title)
+      favoriteBooks.filter((item) => item.id !== book.id)
     );
   };
   

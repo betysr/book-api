@@ -22,10 +22,12 @@
   position: absolute;
   float: right;
   color: black;
-  background-color: rgb(140, 140, 140, 0.4);
+  background-color: rgba(107, 107, 107, 0.4);
   border-radius: 10px;
-}
-
-.addIcon:hover {
-  color: red;
+  width: 25px;
+  height: 25px;
+  right: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
