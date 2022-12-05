@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer.js";
 import { FavoriteBookProvider } from "./contexts/favoriteBookContext";
 import BookDetail from "./components/book/BookDetail";
 import Search from "./components/book/Search.js"
+import BookDetailGoogle from "./components/book/BookDetailGoogle";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/bookList" element={<BookList />} />
             <Route path="/favorite" element={<FavoriteBooks />} />
             <Route path="/book/:id" element={<BookDetail />} />
+            <Route path="/book2/:id" element={<BookDetailGoogle/>} />
           </Routes>
           <Footer />
         </Router>

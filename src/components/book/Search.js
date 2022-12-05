@@ -9,6 +9,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./search.css";
+import tempImage from "../../assets/mainPage.jpg";
+import FavIcon from "./FavIcon";
 
 function Search() {
   const [search, setSearch] = useState("");
@@ -21,7 +23,7 @@ function Search() {
     axios
       .get(
         "https://www.googleapis.com/books/v1/volumes?q=" +
-          search+
+          search +
           "&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU" +
           "&maxResults=20"
       )
@@ -87,6 +89,16 @@ function Search() {
           <Row>
             {bookData.length > 0 ? (
               bookData.map((book, index) => {
+                const newBook = {
+                  id: book.id,
+                  title: book.volumeInfo.title,
+                  description: book.volumeInfo.description,
+                  authors: book.volumeInfo.authors,
+                  image_url: book.volumeInfo.imageLinks
+                    ? book.volumeInfo.imageLinks.smallThumbnail
+                    : tempImage,
+                  isGoogleApi: true
+                };
                 return (
                   <Col
                     xs={6}
@@ -101,6 +113,19 @@ function Search() {
                         className="card"
                         style={{ width: "100%", height: 400 }}
                       >
+                        <a className="addIcon">
+                          <FavIcon book={newBook}></FavIcon>
+                        </a>
+                        <img
+                          src={
+                            book.volumeInfo.imageLinks
+                              ? book.volumeInfo.imageLinks.smallThumbnail
+                              : tempImage
+                          }
+                          alt="Avatar"
+                          height={300}
+                        />
+
                         <div className="card-body">
                           <h6>{book.volumeInfo.title.toUpperCase()}</h6>
                         </div>
