@@ -1,3 +1,31 @@
 .card {
   margin: auto;
+  transition: all 1s;
+}
+
+.card:hover {
+  box-shadow: 10px 10px 15px rgb(0 0 0 / 70%);
+  transition: all 1s;
+}
+
+.card-body {
+  background-color: rgb(0, 0, 0);
+  color:white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addIcon {
+  cursor: pointer;
+  position: absolute;
+  float: right;
+  color: black;
+  background-color: rgb(140, 140, 140, 0.4);
+  border-radius: 10px;
+}
+
+.addIcon:hover {
+  color: red;
 }

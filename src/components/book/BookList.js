@@ -29,7 +29,7 @@ function BookList() {
 
   console.log("BookList:", books);
   return (
-    <>
+    <div className="bookList">
       {error && "Error"}
       {isLoading ? (
         <div
@@ -47,14 +47,14 @@ function BookList() {
         <Container>
           <Row>
             {books.map((book, index) => {
-              return <Col xs={6} md={3} style={{marginBottom:"3rem"}}>
-                <Book book={book}/>
+              return <Col xs={6} md={4} sm={6} lg={3} style={{marginBottom:"3rem"}}>
+                <Book book={book} key={index}/>
               </Col>;
             })}
           </Row>
         </Container>
       )}
-    </>
+    </div>
   );
 }
 
