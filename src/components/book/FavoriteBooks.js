@@ -22,7 +22,7 @@ function FavoriteBooks() {
                   sm={6}
                   lg={3}
                   style={{ marginBottom: "3rem" }}
-                >
+                key={index}>
                   <Book book={book} key={index} />
                 </Col>
               );

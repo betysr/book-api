@@ -27,7 +27,6 @@ function BookList() {
     })();
   }, []);
 
-  console.log("BookList:", books);
   return (
     <div className="bookList">
       {error && "Error"}
@@ -47,7 +46,7 @@ function BookList() {
         <Container>
           <Row>
             {books.map((book, index) => {
-              return <Col xs={6} md={4} sm={6} lg={3} style={{marginBottom:"3rem"}}>
+              return <Col xs={6} md={4} sm={6} lg={3} style={{marginBottom:"3rem"}} key={index}>
                 <Book book={book} key={index}/>
               </Col>;
             })}
