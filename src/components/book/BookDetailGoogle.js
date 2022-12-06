@@ -8,29 +8,31 @@ import "./bookDetail.css";
 import Container from "react-bootstrap/Container";
 import PacmanLaoder from "react-spinners/PacmanLoader";
 import axios from "axios";
-import tempImage from "../../assets/mainPage.jpg"
+import tempImage from "../../assets/mainPage.jpg";
 
 function BookDetailGoogle() {
   const { id } = useParams();
-  const [bookData, setBookData] = useState(null);
+  const [bookData, setBookData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-      if (id) {
-        axios
-          .get(
-            `https://www.googleapis.com/books/v1/volumes/${id}`
-          )
-          .then((res) => {
-            console.log("res", res.data.volumeInfo);
-            setBookData(res.data.volumeInfo);
-            console.log("bookData", bookData);
-            setIsLoading(false);
-          })
-          .catch((err) => setError(err));
-      }
-      
+    if (id) {
+      axios
+        .get(`https://www.googleapis.com/books/v1/volumes/${id}`)
+        .then((res) => {
+          console.log("res data volumeinfo", res.data.volumeInfo);
+          setBookData({
+            title: res.data.volumeInfo.title,
+            authors: res.data.volumeInfo.authors[0],
+            description: res.data.volumeInfo.description,
+            image_url: res.data.volumeInfo.imageLinks ? res.data.volumeInfo.imageLinks.smallThumbnail : tempImage,
+          });
+          setIsLoading(false);
+        })
+        .then((res) => console.log("bookData", bookData))
+        .catch((err) => setError(err));
+    }
   }, [id]);
   return (
     <div className="bookDetailCard">
@@ -61,7 +63,9 @@ function BookDetailGoogle() {
               <CardMedia
                 component="img"
                 sx={{ maxWidth: 250 }}
-                image={bookData.volumeInfo.image_url ? bookData.volumeInfo.image_url.smallThumbnail : tempImage }
+                image={
+                  bookData.image_url
+                }
                 alt="Live from space album cover"
               />
               <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -69,10 +73,10 @@ function BookDetailGoogle() {
                   sx={{ flex: "2 1 1" }}
                   style={{ textAlign: "center" }}
                 >
-                  <h3>{bookData.volumeInfo.title.toUpperCase()}</h3>
-                  <h5>{bookData.volumInfo.authors.toUpperCase()}</h5>
+                  <h3>{bookData.title.toUpperCase()}</h3>
+                  <h5>{bookData.authors.toUpperCase()}</h5>
                   <h6>DESCRIPTION</h6>
-                  <p>{bookData.volumeInfo.description}</p>
+                  <p>{bookData.description}</p>
                 </CardContent>
               </Box>
             </Card>

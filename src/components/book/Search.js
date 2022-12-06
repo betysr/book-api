@@ -30,7 +30,6 @@ function Search() {
       .then((res) => {
         setBookData(res.data.items);
         setIsLoading(false);
-        console.log(res.data.items);
       })
       .catch((err) => setError(err));
   };
@@ -67,7 +66,6 @@ function Search() {
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);
-                console.log("search val: ", search);
               }}
             />
             <IconButton
