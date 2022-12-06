@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import "./bookDetail.css";
-import Container from "react-bootstrap/Container"
+import Container from "react-bootstrap/Container";
 import PacmanLaoder from "react-spinners/PacmanLoader";
 
 function BookDetail() {
@@ -48,30 +48,35 @@ function BookDetail() {
         >
           <PacmanLaoder color="rgba(214, 107, 54, 1)" />
         </div>
-       ): (
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center", maxHeight:300}}>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            maxHeight: 300,
+          }}
+        >
           <Container>
-          <Card sx={{ display: "flex", height:400 }}>
-          <CardMedia
-              component="img"
-              sx={{ maxWidth: 250, }}
-              image={book.image_url}
-              alt="Live from space album cover"
-             
-            />
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <CardContent sx={{ flex: "2 1 1" }} style={{textAlign:"center"}}>
-                <h3>
-                  {(book.title).toUpperCase()}
-                </h3>
-                <h5>
-                  {(book.authors.toUpperCase())}
-                </h5>
-                <h6>DESCRIPTION</h6>
-                <p>{book.description}</p>
-              </CardContent>
-            </Box>
-          </Card>
+            <Card sx={{ display: "flex", height: 400 }}>
+              <CardMedia
+                component="img"
+                sx={{ maxWidth: 250 }}
+                image={book.image_url}
+                alt="Live from space album cover"
+              />
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardContent
+                  sx={{ flex: "2 1 1" }}
+                  style={{ textAlign: "center" }}
+                >
+                  <h3>{book.title.toUpperCase()}</h3>
+                  <h5>{book.authors.toUpperCase()}</h5>
+                  <h6>DESCRIPTION</h6>
+                  <p>{book.description}</p>
+                </CardContent>
+              </Box>
+            </Card>
           </Container>
         </div>
       )}
