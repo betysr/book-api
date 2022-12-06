@@ -35,52 +35,54 @@ function Search() {
   };
   return (
     <div className="mainDiv">
-      <div className="searchBar">
-        {error && <h5>Something went wrong!</h5>}
-        {isLoading ? (
-          <div
-            style={{
-              display: "flex",
-              textAlign: "center",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100vh",
-            }}
-          >
-            <PacmanLaoder color="rgba(214, 107, 54, 1)" />
-          </div>
-        ) : (
-          <Paper
-            component="form"
-            sx={{
-              p: "2px 4px",
-              display: "flex",
-              alignItems: "center",
-              width: 400,
-            }}
-          >
-            <InputBase
-              sx={{ ml: 1, flex: 1 }}
-              placeholder="Search a Book"
-              inputProps={{ "aria-label": "Search a Book" }}
-              value={search}
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            />
-            <IconButton
-              type="button"
-              sx={{ p: "10px" }}
-              aria-label="search"
-              onClick={(e) => {
-                searchBook(e);
-                setIsLoading(true);
+      <div className="outerSearchBar">
+        <div className="searchBar">
+          {error && <h5>Something went wrong!</h5>}
+          {isLoading ? (
+            <div
+              style={{
+                display: "flex",
+                textAlign: "center",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
               }}
             >
-              <SearchIcon />
-            </IconButton>
-          </Paper>
-        )}
+              <PacmanLaoder color="rgba(214, 107, 54, 1)" />
+            </div>
+          ) : (
+            <Paper
+              component="form"
+              sx={{
+                p: "2px 4px",
+                display: "flex",
+                alignItems: "center",
+                width: 400,
+              }}
+            >
+              <InputBase
+                sx={{ ml: 1, flex: 1 }}
+                placeholder="Search a Book"
+                inputProps={{ "aria-label": "Search a Book" }}
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+              />
+              <IconButton
+                type="button"
+                sx={{ p: "10px" }}
+                aria-label="search"
+                onClick={(e) => {
+                  searchBook(e);
+                  setIsLoading(true);
+                }}
+              >
+                <SearchIcon />
+              </IconButton>
+            </Paper>
+          )}
+        </div>
       </div>
       <div>
         <Container>
@@ -95,7 +97,7 @@ function Search() {
                   image_url: book.volumeInfo.imageLinks
                     ? book.volumeInfo.imageLinks.smallThumbnail
                     : tempImage,
-                  isGoogleApi: true
+                  isGoogleApi: true,
                 };
                 return (
                   <Col

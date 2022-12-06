@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 export const FavoriteBookContext = createContext();
 
@@ -17,7 +17,7 @@ export const FavoriteBookProvider = (props) => {
     );
   };
   
-  const value = { handleAddFavorite, handleRemoveFavorite, favoriteBooks };
+  const value = { handleAddFavorite, handleRemoveFavorite, favoriteBooks, setFavoriteBooks };
   return (
     <FavoriteBookContext.Provider value={value}>
       {props.children}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FavoriteBookContext } from "../../contexts/favoriteBookContext";
 import Container from "react-bootstrap/Container";
 import "./favoriteBooks.css";
@@ -7,10 +7,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function FavoriteBooks() {
-  const { favoriteBooks } = useContext(FavoriteBookContext);
-
+  const {favoriteBooks, setFavoriteBooks} = useContext(FavoriteBookContext);
+  
   return (
-    <div style={{ height: "100vh" }} className="favoriteBookList">
+    <div className="favoriteBookList">
       <Container>
         <Row>
           {favoriteBooks.length !== 0 ? (
@@ -29,7 +29,7 @@ function FavoriteBooks() {
             })
           ) : (
             <div style={{height:'60vh', display:"flex", textAlign:"center", alignItems:"center", justifyContent:"center"}}>
-              <p>You don't have any favorite book.</p>
+              <h3>You don't have any favorite book yet.</h3>
             </div>
           )}
         </Row>

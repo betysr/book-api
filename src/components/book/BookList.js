@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function BookList() {
-  const URL = "https://example-data.draftbit.com/books?_limit=16";
+  const URL = "https://example-data.draftbit.com/books?_limit=32";
   const [books, setBooks] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsloading] = useState(true);
@@ -29,6 +29,7 @@ function BookList() {
 
   return (
     <div className="bookList">
+      
       {error && "Error"}
       {isLoading ? (
         <div
@@ -44,6 +45,7 @@ function BookList() {
         </div>
       ) : (
         <Container>
+          <h1 style={{textAlign:"center", padding:25, marginBottom:20}}>BOOKS</h1>
           <Row>
             {books.map((book, index) => {
               return <Col xs={6} md={4} sm={6} lg={3} style={{marginBottom:"3rem"}} key={index}>

@@ -8,20 +8,20 @@ import Button from "react-bootstrap/Button";
 function NavBar() {
   return (
     <>
-      <Navbar bg="light" variant="light">
+      <Navbar variant="light" className="navbar">
         <Container>
           <Link to={`/`}>
-            <Button variant="contained">BETUL'S LIBRARY</Button>
+            <Button className="navButtons" variant="contained">BETUL'S LIBRARY</Button>
           </Link>
           <Nav>
             <Link to={`/`}>
-              <Button variant="contained">HOME</Button>
+              <Button className="navButtons" variant="contained">HOME</Button>
             </Link>
             <Link to={`/bookList`}>
-              <Button variant="contained">BOOKS</Button>
+              <Button className="navButtons" variant="contained">BOOKS</Button>
             </Link>
             <Link to={`/favorite`}>
-              <Button variant="contained">FAVORITE BOOKS</Button>
+              <Button className="navButtons" variant="contained">FAVORITE BOOKS</Button>
             </Link>
           </Nav>
         </Container>

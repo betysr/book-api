@@ -3,3 +3,12 @@
     margin: 15px;
     font-size: large;
 }
+
+.navbar {
+    padding:30px;
+    background-color: black;
+}
+
+.navButtons {
+    color: white;
+}
