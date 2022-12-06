@@ -11,12 +11,14 @@ import Col from "react-bootstrap/Col";
 import "./search.css";
 import tempImage from "../../assets/mainPage.jpg";
 import FavIcon from "./FavIcon";
+import { useNavigate } from "react-router-dom";
 
 function Search() {
   const [search, setSearch] = useState("");
   const [bookData, setBookData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const searchBook = () => {
     console.log("search", search);
@@ -126,6 +128,10 @@ function Search() {
                           }
                           alt="Avatar"
                           height={300}
+                          onClick={
+                               () => navigate(`/book2/${book.id}`)
+                          }
+                          
                         />
 
                         <div className="card-body">
