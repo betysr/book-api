@@ -18,14 +18,14 @@ function MyBookList() {
 
   return (
     <div className="mainDiv">
-      <h4 style={{marginBottom:"35px"}}>ADD YOUR BOOK TO BOOK LIST</h4>
+      <h4 style={{ marginBottom: "35px" }}>ADD YOUR BOOK TO BOOK LIST</h4>
       <Container
         style={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          textAlign:"center",
+          textAlign: "center",
         }}
       >
         <form onSubmit={handleSubmit}>
@@ -62,13 +62,22 @@ function MyBookList() {
             alignItems: "center",
             justifyContent: "center",
             marginTop: "60px",
-            textAlign:"center"
+            textAlign: "center",
           }}
         >
-          <ol style={{textAlign:"center"}}>
+          <ol style={{ textAlign: "center" }}>
             {bookList.map((book, index) => {
               return (
-                <ul key={index} style={{backgroundColor:"gray", margin:"4px", textAlign:"center", padding:"12px", borderRadius:"6px"}}>
+                <ul
+                  key={index}
+                  style={{
+                    backgroundColor: "gray",
+                    margin: "4px",
+                    textAlign: "center",
+                    padding: "12px",
+                    borderRadius: "6px",
+                  }}
+                >
                   {book.bookName}, {book.author}
                 </ul>
               );

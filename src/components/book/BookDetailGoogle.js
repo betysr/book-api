@@ -26,7 +26,9 @@ function BookDetailGoogle() {
             title: res.data.volumeInfo.title,
             authors: res.data.volumeInfo.authors[0],
             description: res.data.volumeInfo.description,
-            image_url: res.data.volumeInfo.imageLinks ? res.data.volumeInfo.imageLinks.smallThumbnail : tempImage,
+            image_url: res.data.volumeInfo.imageLinks
+              ? res.data.volumeInfo.imageLinks.smallThumbnail
+              : tempImage,
           });
           setIsLoading(false);
         })
@@ -63,9 +65,7 @@ function BookDetailGoogle() {
               <CardMedia
                 component="img"
                 sx={{ maxWidth: 250 }}
-                image={
-                  bookData.image_url
-                }
+                image={bookData.image_url}
                 alt="Live from space album cover"
               />
               <Box sx={{ display: "flex", flexDirection: "column" }}>

@@ -1,26 +1,24 @@
-.mainDiv{
-    height: 100%;
+.mainDiv {
+  height: 100%;
 }
 
-.searchBar{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin: 50px;
-    
+.searchBar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
 }
 
 .css-1vm0r4s-MuiPaper-root {
-    background-color: #e3e3e3 !important;
+  background-color: #e3e3e3 !important;
 }
 
-.default{
-    background: url('../../assets/libraryImage.jpg');
-    width: 100%;
-    height: 65vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.default {
+  background: url("../../assets/libraryImage.jpg");
+  width: 100%;
+  height: 65vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-

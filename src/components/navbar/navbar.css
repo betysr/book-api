@@ -1,14 +1,14 @@
 .nav-link {
-    color: black !important;
-    margin: 15px;
-    font-size: large;
+  color: black !important;
+  margin: 15px;
+  font-size: large;
 }
 
 .navbar {
-    padding:30px;
-    background-color: black;
+  padding: 30px;
+  background-color: black;
 }
 
 .navButtons {
-    color: white;
+  color: white;
 }

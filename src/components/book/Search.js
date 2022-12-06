@@ -76,7 +76,7 @@ function Search() {
                 sx={{ p: "10px" }}
                 aria-label="search"
                 onClick={(e) => {
-                  if(search.length!==0){
+                  if (search.length !== 0) {
                     searchBook(e);
                     setIsLoading(true);
                   }
@@ -128,10 +128,7 @@ function Search() {
                           }
                           alt="Avatar"
                           height={300}
-                          onClick={
-                               () => navigate(`/book2/${book.id}`)
-                          }
-                          
+                          onClick={() => navigate(`/book2/${book.id}`)}
                         />
 
                         <div className="card-body">
