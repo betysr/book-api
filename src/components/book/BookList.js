@@ -29,7 +29,6 @@ function BookList() {
 
   return (
     <div className="bookList">
-      
       {error && "Error"}
       {isLoading ? (
         <div
@@ -45,12 +44,23 @@ function BookList() {
         </div>
       ) : (
         <Container>
-          <h1 style={{textAlign:"center", padding:25, marginBottom:20}}>BOOKS</h1>
+          <h1 style={{ textAlign: "center", padding: 25, marginBottom: 20 }}>
+            BOOKS
+          </h1>
           <Row>
             {books.map((book, index) => {
-              return <Col xs={6} md={4} sm={6} lg={3} style={{marginBottom:"3rem"}} key={index}>
-                <Book book={book} key={index}/>
-              </Col>;
+              return (
+                <Col
+                  xs={6}
+                  md={4}
+                  sm={6}
+                  lg={3}
+                  style={{ marginBottom: "3rem" }}
+                  key={index}
+                >
+                  <Book book={book} key={index} />
+                </Col>
+              );
             })}
           </Row>
         </Container>

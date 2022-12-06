@@ -74,8 +74,10 @@ function Search() {
                 sx={{ p: "10px" }}
                 aria-label="search"
                 onClick={(e) => {
-                  searchBook(e);
-                  setIsLoading(true);
+                  if(search.length!==0){
+                    searchBook(e);
+                    setIsLoading(true);
+                  }
                 }}
               >
                 <SearchIcon />

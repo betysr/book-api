@@ -23,6 +23,9 @@ function NavBar() {
             <Link to={`/favorite`}>
               <Button className="navButtons" variant="contained">FAVORITE BOOKS</Button>
             </Link>
+            <Link to={`/myBookList`}>
+              <Button className="navButtons" variant="contained">MY BOOK LIST</Button>
+            </Link>
           </Nav>
         </Container>
       </Navbar>
